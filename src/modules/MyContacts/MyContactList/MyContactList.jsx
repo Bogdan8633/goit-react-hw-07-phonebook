@@ -13,7 +13,7 @@ const MyContactList = () => {
 
   useEffect(() => {
     dispatch(fetchAllContacts());
-  }, []);
+  }, [dispatch]);
 
   const isContacts = Boolean(filteredContacts.length);
 
