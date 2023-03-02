@@ -38,6 +38,6 @@ export const fetchDeleteContact = id => {
     } catch ({ response }) {
       dispatch(actions.fetchDeleteContactError(response.data.message));
     }
-    return func;
   };
+  return func;
 };

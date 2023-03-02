@@ -1,6 +1,16 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-import * as actions from './contacts-actions';
+import {
+  fetchAllContactsLoading,
+  fetchAllContactsSuccess,
+  fetchAllContactsError,
+  fetchAddContactLoading,
+  fetchAddContactSuccess,
+  fetchAddContactError,
+  fetchDeleteContactLoading,
+  fetchDeleteContactSuccess,
+  fetchDeleteContactError,
+} from './contacts-actions';
 
 const initialState = {
   items: [],
@@ -12,40 +22,40 @@ const contactsSlice = createSlice({
   name: 'contacts',
   initialState,
   extraReducers: {
-    [actions.fetchAllContactsLoading]: store => {
+    [fetchAllContactsLoading]: store => {
       store.loading = true;
     },
-    [actions.fetchAllContactsSuccess]: (store, { payload }) => {
+    [fetchAllContactsSuccess]: (store, { payload }) => {
       console.log('payload з fetchAllContactsSuccess', payload);
       store.loading = false;
       store.items = payload;
     },
-    [actions.fetchAllContactsError]: (store, { payload }) => {
+    [fetchAllContactsError]: (store, { payload }) => {
       store.loading = false;
       store.error = payload;
     },
 
-    [actions.fetchAddContactLoading]: store => {
+    [fetchAddContactLoading]: store => {
       store.loading = true;
     },
-    [actions.fetchAddContactSuccess]: (store, { payload }) => {
+    [fetchAddContactSuccess]: (store, { payload }) => {
       store.loading = false;
       store.items.push(payload);
     },
-    [actions.fetchAddContactError]: (store, { payload }) => {
+    [fetchAddContactError]: (store, { payload }) => {
       store.loading = false;
       store.error = payload;
     },
 
-    [actions.fetchDeleteContactLoading]: store => {
+    [fetchDeleteContactLoading]: store => {
       store.loading = true;
     },
-    [actions.fetchDeleteContactSuccess]: (store, { payload }) => {
+    [fetchDeleteContactSuccess]: (store, { payload }) => {
       store.loading = false;
       const index = store.items.findIndex(item => item.id === payload);
       store.items.splice(index, 1);
     },
-    [actions.fetchDeleteContactError]: (store, { payload }) => {
+    [fetchDeleteContactError]: (store, { payload }) => {
       store.loading = false;
       store.error = payload;
     },
