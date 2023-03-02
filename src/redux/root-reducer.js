@@ -1,3 +1,8 @@
+// !!!!Увага ТРЕБА ПРИБРАТИ Persist та PersistGate!!!!
+// !!!!Увага ТРЕБА ПРИБРАТИ Persist та PersistGate!!!!
+// !!!!Увага ТРЕБА ПРИБРАТИ Persist та PersistGate!!!!
+// !!!!Увага ТРЕБА ПРИБРАТИ Persist та PersistGate!!!!
+// !!!!Увага ТРЕБА ПРИБРАТИ Persist та PersistGate!!!!
 import { combineReducers } from '@reduxjs/toolkit';
 import { persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';

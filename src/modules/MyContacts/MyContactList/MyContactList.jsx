@@ -1,4 +1,7 @@
 import { useSelector } from 'react-redux';
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { fetchAllContacts } from 'redux/contacts/contacts-operations';
 
 import ContactItem from './ContactItem/ContactItem';
 import styles from './myContactList.module.css';
@@ -6,6 +9,11 @@ import { getFilteredContacts } from 'redux/contacts/contacts-selectors';
 
 const MyContactList = () => {
   const filteredContacts = useSelector(getFilteredContacts);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchAllContacts());
+  }, []);
 
   const isContacts = Boolean(filteredContacts.length);
 

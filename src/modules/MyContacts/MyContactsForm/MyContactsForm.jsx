@@ -1,5 +1,4 @@
 import { useSelector, useDispatch } from 'react-redux';
-import { addContact } from 'redux/contacts/contacts-slice';
 
 import React, { useState } from 'react';
 
@@ -8,6 +7,8 @@ import initialState from './initialState';
 import styles from './myContactsForm.module.css';
 
 import { getAllContacts } from 'redux/contacts/contacts-selectors';
+
+import { fetchAddContact } from 'redux/contacts/contacts-operations';
 
 const MyContactsForm = () => {
   const [state, setState] = useState({ ...initialState });
@@ -34,7 +35,7 @@ const MyContactsForm = () => {
       return false;
     }
 
-    dispatch(addContact({ name, number }));
+    dispatch(fetchAddContact({ name, number }));
   };
 
   const handleSubmit = e => {
