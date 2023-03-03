@@ -16,7 +16,6 @@ const MyContactList = () => {
   }, [dispatch]);
 
   const isContacts = Boolean(filteredContacts.length);
-  console.log('isContacts', isContacts);
 
   return (
     <div>
