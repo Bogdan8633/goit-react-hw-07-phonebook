@@ -21,8 +21,8 @@ const MyContactList = () => {
     <div>
       {isContacts && (
         <ul className={styles.list}>
-          {filteredContacts.map(({ id, name, number }) => (
-            <ContactItem key={id} id={id} name={name} number={number} />
+          {filteredContacts.map(({ id, name, phone }) => (
+            <ContactItem key={id} id={id} name={name} phone={phone} />
           ))}
         </ul>
       )}

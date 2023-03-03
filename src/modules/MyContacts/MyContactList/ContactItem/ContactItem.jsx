@@ -4,7 +4,7 @@ import { deleteContact } from 'redux/contacts/contacts-operations';
 
 import styles from './contactItem.module.css';
 
-const ContactItem = ({ id, name, number }) => {
+const ContactItem = ({ id, name, phone }) => {
   const dispatch = useDispatch();
 
   const handleDeleteContact = id => {
@@ -14,7 +14,7 @@ const ContactItem = ({ id, name, number }) => {
   return (
     <li className={styles.item}>
       <p className={styles.name}>{name}:</p>
-      <p className={styles.number}>{number}</p>
+      <p className={styles.number}>{phone}</p>
       <button
         type="button"
         className={styles.deleteBtn}
@@ -29,7 +29,7 @@ const ContactItem = ({ id, name, number }) => {
 ContactItem.propTypes = {
   id: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
-  number: PropTypes.string.isRequired,
+  phone: PropTypes.string.isRequired,
 };
 
 export default ContactItem;
