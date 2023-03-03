@@ -37,30 +37,3 @@ export const fetchDeleteContact = createAsyncThunk(
     }
   }
 );
-
-// export const fetchAddContact = data => {
-//   const func = async dispatch => {
-//     try {
-//       dispatch(actions.fetchAddContactLoading());
-//       const result = await api.addContact(data);
-//       dispatch(actions.fetchAddContactSuccess(result));
-//     } catch ({ response }) {
-//       dispatch(actions.fetchAddContactError(response.data.message));
-//     }
-//   };
-
-//   return func;
-// };
-
-// export const fetchDeleteContact = id => {
-//   const func = async dispatch => {
-//     try {
-//       dispatch(actions.fetchDeleteContactLoading());
-//       await api.deleteContact(id);
-//       dispatch(actions.fetchDeleteContactSuccess(id));
-//     } catch ({ response }) {
-//       dispatch(actions.fetchDeleteContactError(response.data.message));
-//     }
-//   };
-//   return func;
-// };
