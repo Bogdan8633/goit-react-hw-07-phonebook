@@ -1,7 +1,7 @@
 import { useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import { fetchAllContacts } from 'redux/contacts/contacts-operations';
+import { fetchContacts } from 'redux/contacts/contacts-operations';
 
 import ContactItem from './ContactItem/ContactItem';
 import styles from './myContactList.module.css';
@@ -12,7 +12,7 @@ const MyContactList = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(fetchAllContacts());
+    dispatch(fetchContacts());
   }, [dispatch]);
 
   const isContacts = Boolean(filteredContacts.length);

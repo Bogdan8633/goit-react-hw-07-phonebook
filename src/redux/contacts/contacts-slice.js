@@ -1,9 +1,9 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 import {
-  fetchAllContacts,
-  fetchAddContact,
-  fetchDeleteContact,
+  fetchContacts,
+  addContact,
+  deleteContact,
 } from './contacts-operations';
 
 const initialState = {
@@ -17,37 +17,37 @@ const contactsSlice = createSlice({
   initialState,
   extraReducers: builder => {
     builder
-      .addCase(fetchAllContacts.pending, store => {
+      .addCase(fetchContacts.pending, store => {
         store.loading = true;
       })
-      .addCase(fetchAllContacts.fulfilled, (store, { payload }) => {
+      .addCase(fetchContacts.fulfilled, (store, { payload }) => {
         store.loading = false;
         store.items = payload;
       })
-      .addCase(fetchAllContacts.rejected, (store, { payload }) => {
+      .addCase(fetchContacts.rejected, (store, { payload }) => {
         store.loading = false;
         store.error = payload;
       })
-      .addCase(fetchAddContact.pending, store => {
+      .addCase(addContact.pending, store => {
         store.loading = true;
       })
-      .addCase(fetchAddContact.fulfilled, (store, { payload }) => {
+      .addCase(addContact.fulfilled, (store, { payload }) => {
         store.loading = false;
         store.items.push(payload);
       })
-      .addCase(fetchAddContact.rejected, (store, { payload }) => {
+      .addCase(addContact.rejected, (store, { payload }) => {
         store.loading = false;
         store.error = payload;
       })
-      .addCase(fetchDeleteContact.pending, store => {
+      .addCase(deleteContact.pending, store => {
         store.loading = true;
       })
-      .addCase(fetchDeleteContact.fulfilled, (store, { payload }) => {
+      .addCase(deleteContact.fulfilled, (store, { payload }) => {
         store.loading = false;
         const index = store.items.findIndex(item => item.id === payload);
         store.items.splice(index, 1);
       })
-      .addCase(fetchDeleteContact.rejected, (store, { payload }) => {
+      .addCase(deleteContact.rejected, (store, { payload }) => {
         store.loading = false;
         store.error = payload;
       });

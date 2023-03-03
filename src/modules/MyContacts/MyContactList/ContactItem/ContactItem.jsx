@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
-import { fetchDeleteContact } from 'redux/contacts/contacts-operations';
+import { deleteContact } from 'redux/contacts/contacts-operations';
 
 import styles from './contactItem.module.css';
 
@@ -8,7 +8,7 @@ const ContactItem = ({ id, name, number }) => {
   const dispatch = useDispatch();
 
   const handleDeleteContact = id => {
-    dispatch(fetchDeleteContact(id));
+    dispatch(deleteContact(id));
   };
 
   return (

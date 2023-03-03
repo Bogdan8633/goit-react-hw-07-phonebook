@@ -8,7 +8,7 @@ import styles from './myContactsForm.module.css';
 
 import { getAllContacts } from 'redux/contacts/contacts-selectors';
 
-import { fetchAddContact } from 'redux/contacts/contacts-operations';
+import { addContact } from 'redux/contacts/contacts-operations';
 
 const MyContactsForm = () => {
   const [state, setState] = useState({ ...initialState });
@@ -35,7 +35,7 @@ const MyContactsForm = () => {
       return false;
     }
 
-    dispatch(fetchAddContact({ name, number }));
+    dispatch(addContact({ name, number }));
   };
 
   const handleSubmit = e => {
