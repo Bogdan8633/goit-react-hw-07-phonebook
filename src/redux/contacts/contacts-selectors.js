@@ -12,6 +12,5 @@ export const getFilteredContacts = ({ contacts, filter }) => {
 };
 
 export const getLoadingStatus = ({ contacts }) => {
-  console.log('це статус loading:', contacts.loading);
   return contacts.loading;
 };
