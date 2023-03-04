@@ -10,3 +10,8 @@ export const getFilteredContacts = ({ contacts, filter }) => {
     contact.name.toLowerCase().includes(normalizedFilter)
   );
 };
+
+export const getLoadingStatus = ({ contacts }) => {
+  console.log('це статус loading:', contacts.loading);
+  return contacts.loading;
+};
